@@ -4,29 +4,29 @@ import random
 class Game:
 
     def __init__(self):
-        self.lista = ["sten", "sax", "påse"]
+        self.lista = ["rock", "scissors", "paper"]
         self.play = True
         self.spela_igen = False
 
     def Gissning(self, gissat):
         self.gissat = gissat
-        if gissat == "sten" and self.val == "sax":
+        if gissat == "rock" and self.val == "scissors":
             print("I chose scissors")
             print("You Won")
-        elif gissat == "sax" and self.val == "påse":
+        elif gissat == "scissors" and self.val == "paper":
             print("Jag valde påse")
             print("Du vann")
-        elif gissat == "påse" and self.val == "sten":
+        elif gissat == "paper" and self.val == "rock":
             print("Jag valde sten")
             print("Du vann")
         
-        elif gissat == "sax" and self.val == "sten":
+        elif gissat == "scissors" and self.val == "rock":
             print("Jag valde sten")
             print("Jag vann")
-        elif gissat == "påse" and self.val == "sax":
+        elif gissat == "paper" and self.val == "scissors":
             print("Jag valde sax")
             print("Jag vann")
-        elif gissat == "sten" and self.val == "påse":
+        elif gissat == "rock" and self.val == "paper":
             print("Jag valde påse")
             print("Jag vann")
         else:
