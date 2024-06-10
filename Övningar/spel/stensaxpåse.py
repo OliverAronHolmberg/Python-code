@@ -55,7 +55,7 @@ print("!!Välkommen till stex/sax/påse!!")
 
 while game.play == True:
     game.val = random.choice(game.lista)
-    gissning = input("Skriv antingen: Sten/Sax/Påse").lower()
+    gissning = input("Skriv: Sten/Sax/Påse").lower()
     
     
     if gissning == "sten" or gissning == "sax" or gissning == "påse":
