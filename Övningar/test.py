@@ -1,9 +1,7 @@
-import random
+mening = "Hej Hej"
 
 
-list = ["katt", "hatt"]
 
-val = random.choice(list)
+lista = [mening.split()]
 
-
-print(val)
+print(lista)
