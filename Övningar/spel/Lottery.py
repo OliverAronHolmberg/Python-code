@@ -57,7 +57,9 @@ class Game:
             self.cash = self.cash - bet
             print(f"You have ${game.cash} to your name")
             
-            
+        if self.cash == 0:
+            print(f"You left with ${game.cash}")
+            quit()
 
         notplay = True 
         while notplay == True:
