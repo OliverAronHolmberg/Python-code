@@ -1,32 +1,30 @@
-
-
-
 class Main:
-
     def __init__(self):
         self.run = True
-        self.contractions = ["hej"]
-
-
-    def ReplaceCon(self, lista):
-        self.lista = lista
-        print(lista)
+        self.contractions = ["Hej", "nej"]
+        self.replacement = ["Hejdå", "Aldrig"]
+    
+    def ReplaceCon(self, text):
+        print("Original text:", text)
         
+      
+        for contraction, replacement in zip(self.contractions, self.replacement):
+           
+            text = text.replace(contraction, replacement)
         
-
-
-
+        print("Replaced text:", text)
+        return text
 
 
 main = Main()
 
-while main.run == True:
-    mening = input("Write your sentence(write Stop to end)").capitalize()
+while main.run:
+    mening = input("Skriv din mening (skriv Stop för att avsluta): ").capitalize()
 
     if mening == "Stop":
-        print("Quiting")
-        quit()
-
+        print("Avslutar")
+        break
     else:
         
-        main.ReplaceCon([mening.split()])
+        replaced_text = main.ReplaceCon(mening)
+        print("Resultat:", replaced_text)
