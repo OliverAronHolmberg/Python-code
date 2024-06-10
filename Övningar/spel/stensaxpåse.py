@@ -30,12 +30,12 @@ class Game:
             print("I chose Paper")
             print("I won!")
         else:
-            print(f"I chose {self.val}")
+            print(f"I chose {self.val.title()}")
             print("It was a draw")
         
         
         while self.spela_igen == "yes" or "no":
-            self.spela_igen = input("Do you want to play more?").lower()
+            self.spela_igen = input("Do you want to play more? Yes/No").lower()
             if self.spela_igen == "yes":
                 print("How fun")
                 print("")
@@ -58,7 +58,7 @@ while game.play == True:
     gissning = input("Please write either: Rock/Paper/Scissors").lower()
     
     
-    if gissning == "Rock" or gissning == "Scissors" or gissning == "Paper":
+    if gissning == "rock" or gissning == "scissors" or gissning == "paper":
         gis = game.Gissning(gissning)
     
     else:
