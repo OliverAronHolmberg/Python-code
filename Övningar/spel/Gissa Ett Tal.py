@@ -13,45 +13,51 @@ class Game:
     def Gissa(self, gissningar):
         antalet = self.antalet
         if gissningar < self.tal:
-            print("För lågt, gissa igen")
+            print("To low of a number, guess again:")
             self.antalet = self.antalet + 1
         elif gissningar > self.tal:
-            print("För högt, gissa igen")
+            print("To high of a number, guess again: ")
             self.antalet = self.antalet + 1
         else:
-            print(f"Du gissade rätt på {antalet} gissningar")
-            while self.spela_igen != "ja" or self.spela_igen != "nej":
-                self.spela_igen = input(("Vill du spela igen Ja/Nej:")).lower()
-                if self.spela_igen == "ja":
+            print(f"You got it in {antalet} guesses")
+            while self.spela_igen != "no" or self.spela_igen != "yes":
+                self.spela_igen = input(("Do you want to play again Yes/No:")).lower()
+                if self.spela_igen == "no":
                     print("")
+                    print("*****************************")
                     self.antalet = 1
                     return
-                elif self.spela_igen == "nej":
+                elif self.spela_igen == "yes":
                     print("")
-                    print("Hejdå!")
+                    print("Bye!")
                     quit()
                 else:
-                    print("skriv Ja eller Nej")
+                    print("Please write Yes or No")
                     
             
 
 
 
 game = Game()
-print("Välkommen till Gissa ett Tal!")
-
+print("*****************************")
+print("!!Welcome to Guess a Number!!")
+print("*****************************")
 
 while game.gameplay == True:
     
-    gissning = input("Gissa ett tal")
+    gissning = input("Guess a number from 0-100: ")
     if gissning.isdigit():
         gissning = int(gissning)
         game.Gissa(gissning)
 
+    elif gissning >= 100:
+        print("Please guess lower than 100")
     
+    elif gissning < 0:
+        print("Please guess higher than 0")
 
     else:
-        print("Gissa ett tal är du snäll")
+        print("Guess a number please")
         
 
 
