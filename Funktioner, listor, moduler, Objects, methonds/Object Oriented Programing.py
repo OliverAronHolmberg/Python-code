@@ -381,6 +381,61 @@ print("")
 # abstract class = a class which contains one or more abstract methods
 # abstract method = a method that has a declaration but does not have an implementation
 
+from abc import ABC, abstractmethod # Man måste importa detta
+
+# Man vill inte att spelaren ska skapa en vehcile class för det är för generelt så man vil latt den ska skapa en child class funkar det inte och blir exception error
 
 
 
+class Vehicle(ABC): # lägg till inom parantererna ABC
+
+    @abstractmethod # ha med detta
+    def go(self):
+        pass
+    @abstractmethod
+    def stop(self):
+        pass  # om man har en method som inte är implementat i childclass
+        
+
+class Car(Vehicle):
+
+    def go(self):
+        print("Ypu drive the car")
+
+        
+    def stop(self):
+        print("You stop the car")
+
+class Truck(Vehicle):
+
+    def go(self):
+        print("You drive the truck")
+
+    def stop(self):
+        print("You stop the truck")
+
+
+class Motorcyckle(Vehicle):
+
+    pass
+
+
+
+# vehicle = Vehicle() # Det blir except fel här om man gör abstract methond
+car = Car()
+truck = Truck()
+# motorcyckle =  Motorcyckle() # om man inte några methonds i child classen kan den inte inherita från abstract class parent
+
+
+
+car.go()
+truck.go()
+car.stop()
+truck.stop()
+# motorcyckle.go()
+
+
+
+#___________________________________________________________________________________________
+
+#
