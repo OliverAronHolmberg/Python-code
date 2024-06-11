@@ -274,3 +274,135 @@
 #Också * betyder allting så man kan ex. skriva: from examplemodule import * // för att importa allt i det scriptet
 #____________________________________________________________________________________________________________________
 
+# Assign functions to variables
+
+def hello():
+    print("Hello")
+
+hello()
+
+print(hello)
+hi = hello
+hi() #Den har två namn nu
+
+
+say = print
+
+print("Musse")
+
+say("Musse")
+
+
+#__________________________________________________________________________________
+
+# Higher Order Function = a finction that either:
+#                         1. accepts a function as an argument
+#                           or
+#                         2. returns a function
+#                         (In python, functions are also treated as objects)
+
+
+
+def loud(text):
+    return text.upper()
+
+def quiet(text):
+    return text.lower()
+
+def hello(func): # Higher order function // accepts a function as an argument
+    text = func("hello")
+    print(text)
+
+
+hello(loud)
+hello(quiet)
+
+
+
+
+def divisor(x): # Är en higher order function för den: returns a function
+    def dividend(y):
+        return y / x
+    return dividend
+
+
+divide = divisor(2)
+print(divide(10))
+
+
+
+#______________________________________________________________________________________________________
+
+# lambda function = function written in 1 line using lambda keyword
+#                   accepts any number of arguments, but only has one expression
+#                   (think of it as a shortcut)
+#                   (useful if needed for a short period of time)
+#
+# lambda parameters:expressions
+
+
+#Normal fuction
+# def double(x):
+#     return x * 2
+
+# print(double(5))
+
+
+# lambda function
+
+double = lambda x: x * 2
+print(double(5))
+
+print("")
+
+
+muiltiply = lambda x, y: x * y
+print(muiltiply(5, 2))
+
+
+add = lambda x, y, z: x + y + z
+print(add(5, 2, 9))
+
+full_name = lambda x, y: x + " " + y
+print(full_name("Oliver", "Holmberg"))
+
+agecheck = lambda age: True if age >= 18 else False
+print(agecheck(18))
+
+#____________________________________________________________________________________________________
+
+# sort() method = used with lists
+# sort() function = used with iterables (tuples, disctionarys, sets, lists)
+
+# sort() method
+
+students = ["Musse", "Nusse", "Tusse", "Busse", "Lusse"]
+
+students.sort() # sort with list kan acceptera 2 keyword arguments: key=, reverse= /// Sorterar dom i aflabetisk ordning
+for i in students:
+    print(i)
+
+print("")
+
+# sort() function
+
+sorted_students = sorted(students, reverse=True)
+for i in sorted_students:
+    print(i)
+
+
+#-----------------------
+
+students2 = [("Musse", "F", 20),
+             ("Tusse", "A", 100)]
+
+
+grade = lambda grades:grades[1]
+students2.sort(key=grade)
+
+for i in students2:
+    print(i)
+
+
+
+#______________________________________________________________________________________
