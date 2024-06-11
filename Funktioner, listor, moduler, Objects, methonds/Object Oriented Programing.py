@@ -331,4 +331,56 @@ rabbit.eat()
 #Den kommer använda en metod som är närmre aassosierad med sig själv innan den tar en method från en parent
 
 
+#_____________________________________________________________________________
+
+#Methond chaining = calling multiple methonds sequentially
+#                   each call performs an action on the same object and returns self
+
+
+class Car:
+
+    def turn_on(self):
+        print("You start the car")
+        return self                     # Måste ha return self för att det ska funka
+
+    def drive(self):
+        print("You drive the car")
+        return self
+    
+    def brake(self):
+        print("You step on the brakes")
+        return self
+    
+    def turn_off(self):
+        print("You turn off the engine")
+        return self
+
+car = Car()
+
+car.turn_on().drive() #istället för att kalla dom på olika rader kallar man dom på en rad
+
+car.brake().turn_off()
+
+car.turn_on()\
+    .drive()\
+    .brake()\
+    .turn_off() # Om det blir mycket kan man flytta ner på annan rad
+
+
+
+
+print("")
+
+
+#_________________________________________________________________________________________________
+
+# Prevents a user from creating an object of that class
+# + compels a user to override abstravt methonds in a child class
+
+
+# abstract class = a class which contains one or more abstract methods
+# abstract method = a method that has a declaration but does not have an implementation
+
+
+
 
