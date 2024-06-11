@@ -438,4 +438,105 @@ truck.stop()
 
 #___________________________________________________________________________________________
 
-#
+# objects as arguments
+
+
+class Car:
+
+    color = None
+
+class Motorcyckle:
+
+    color = None
+
+def change_color(vehicle, color):
+    
+    vehicle.color = color
+
+
+car1 = Car()
+car2 = Car()
+car3 = Car()
+
+bike1 = Motorcyckle()
+
+change_color(car1, "red")
+change_color(car2, "blue")
+change_color(car3, "yellow")
+change_color(bike1, "green")
+
+print(car1.color)
+print(car2.color)
+print(car3.color)
+print(bike1.color)
+
+
+
+#____________________________________________________________
+
+# Duck typing = concept where the class of an object is less important than the methods
+#               class type is not checked of minimun methond/attributes are present
+#               "If it walks like a duck, and it quacks lika a duck, then it must be a duck"
+
+
+
+class Duck:
+
+    def walk(self):
+        print("This duck is walking")
+    
+    def talk(self):
+        print("This duck is qwuacking")
+
+class Chicken:
+    def walk(self):
+        print("This chicken is walking")
+    
+    def talk(self):
+        print("This chicken is clucking")
+
+
+class Person():
+
+    def catch(self, duck):
+        duck.walk()
+        duck.talk()
+        print("You caught the bird")
+    
+duck = Duck()
+chicken = Chicken()
+person = Person()
+
+
+person.catch(chicken)
+
+
+#Den kommer inte kolla på classen kom den nhar minimum av de methods som behövs
+
+#______________________________________________________________________________________
+
+# walrus operator (:=)
+
+# assignment expression aka walrus operator
+# assings values to variables as part of a larger expression
+
+# foods = list()
+# while True:
+#    food = input("what food do you like")
+#       if food ?? "quit"
+#           brek
+#    foods.append(food)
+
+# foods = list()
+# while food := input("What food do you like?: ") != "quit":
+#     foods.append(food)
+
+happy = True
+print(happy)
+
+
+print(happy := True)
+
+# Man kan skriva det på en linje istället för flera
+
+ 
