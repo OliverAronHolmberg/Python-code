@@ -5,10 +5,13 @@ class Main:
 
     def __init__(self):
         self.run = True
+        self.uh = "uh"
+        self.eh = "eh"
         
 
     def AddUh(self, sentance):
-        self,sentance = sentance
+        self.sentance = sentance
+        print(sentance)
 
 
 
