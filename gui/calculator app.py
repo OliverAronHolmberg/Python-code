@@ -1,5 +1,5 @@
 from tkinter import *
-
+import re
 
 
 window = Tk()
@@ -11,25 +11,27 @@ window.title("Calculator")
 texten = "bla"
 number = StringVar(value="")
 number = ""
-mode = 0 # 1 för +, 2 för -, 3 för *, 4 för /
 tallista = []
 
 def add_number(new_c):
     global number
-    number1 += new_c
+    number += new_c
     print(number)
 
     
-def operator():
+def minusop():
+    global number
+    tallista.append(number)
+    tallista.append("-")
+    number = re.sub(r'\d+', '', str(number))
+    print(tallista)
+   
+
     
 
 
 def calculate():
-    global number1
-    
-    
-
-
+    global number
     float(number)
     print(number)
 
@@ -39,7 +41,7 @@ def calculate():
 # Upper row
 
 
-minus = Button(window, text="-", padx= 33, pady=5, font=("Arial", 20), command=lambda: add_number("-"))
+minus = Button(window, text="-", padx= 33, pady=5, font=("Arial", 20), command=minusop)
 minus.place(x = 380, y = 220)
 
 
