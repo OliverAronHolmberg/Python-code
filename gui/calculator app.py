@@ -26,15 +26,33 @@ def minusop():
     number = re.sub(r'\d+', '', str(number))
     print(tallista)
    
-
+def plusop():
+    global number
+    tallista.append(number)
+    tallista.append("+")
+    number = re.sub(r'\d+', '', str(number))
+    print(tallista)
     
+def timesop():
+    global number
+    tallista.append(number)
+    tallista.append("*")
+    number = re.sub(r'\d+', '', str(number))
+    print(tallista)
 
+def divideop():
+    global number
+    tallista.append(number)
+    tallista.append("/")
+    number = re.sub(r'\d+', '', str(number))
+    print(tallista)
 
 def calculate():
     global number
-    float(number)
-    print(number)
+    global tallista
 
+    tallista.append(number)
+    print(tallista)
 
 
 
@@ -57,7 +75,7 @@ two.place(x = 140, y = 300)
 three = Button(window, text="3", padx= 30, pady=5, font=("Arial", 20), command=lambda: add_number("3"))
 three.place(x = 250, y = 300)
 
-plus = Button(window, text="+", padx= 30, pady=5, font=("Arial", 20))
+plus = Button(window, text="+", padx= 30, pady=5, font=("Arial", 20), command=plusop)
 plus.place(x = 380, y = 300)
 
 
@@ -72,7 +90,7 @@ five.place(x=140, y=380)
 six = Button(window, text="6", padx= 30, pady=5, font=("Arial", 20), command=lambda: add_number("6"))
 six.place(x=250, y=380)
 
-times = Button(window, text="x", padx= 32, pady=5, font=("Arial", 20))
+times = Button(window, text="x", padx= 32, pady=5, font=("Arial", 20), command=timesop)
 times.place(x = 380, y = 380)
 
 #Last - down Row
@@ -85,7 +103,7 @@ eight.place(x=140, y=460)
 nine = Button(window, text="9", padx= 30, pady=5, font=("Arial", 20), command=lambda: add_number("9"))
 nine.place(x=250, y=460)
 
-division = Button(window, text="÷", padx= 30, pady=5, font=("Arial", 20))
+division = Button(window, text="÷", padx= 30, pady=5, font=("Arial", 20), command=divideop)
 division.place(x=380, y = 460)
 
 
