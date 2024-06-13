@@ -101,6 +101,7 @@ def sqrt():
         
     except:
         text.config(text=str("Math error"))
+        number = ""
 
 
 
