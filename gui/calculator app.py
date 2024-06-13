@@ -104,7 +104,10 @@ def sqrt():
         number = ""
 
 
-
+def pi():
+    global number
+    number = ""
+    add_number("3.14159265359")
 
 
     # global tallista
@@ -143,7 +146,7 @@ def sqrt():
 # Over row
 
 
-pibutton = Button(window, text="Pi", padx= 20, pady=3, font=("Arial", 15), command=lambda: add_number("3.14159265359"))
+pibutton = Button(window, text="Pi", padx= 20, pady=3, font=("Arial", 15), command=pi)
 pibutton.place(x = 30, y = 10)
 
 rootbutton = Button(window, text=" √ ", padx= 17, pady=3, font=("Arial", 15), command = sqrt)
