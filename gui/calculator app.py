@@ -9,7 +9,8 @@ window.geometry("500x630")
 
 window.title("Calculator")
 window.config(bg="#c2c2c2")
-
+icon = PhotoImage(file= 'gui\\calc.png')
+window.iconphoto(True, icon)
 texten = ""
 number = StringVar(value="")
 number = ""

@@ -161,7 +161,20 @@ scale.set(((scale["from"]-scale["to"])/2+scale["to"])) # Bra formel för att få
 button3 = Button(window, text="Sumbit", command= summit)
 button3.pack(side= BOTTOM)
 
-#Listbox
+
+
+
+def createWindow():
+    new_window = Toplevel() # TopLevel() = new window "on top" of other windows, linked to a "bottom" window
+    new_window2 = Tk() # Tk() = New independant window
+
+
+
+button4 = Button(window, text="Create new window", command= createWindow)
+button4.pack(side=LEFT)
+
+
+
 
 
 window.mainloop() # Place window on computar screen, listen for events'
